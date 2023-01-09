@@ -9,7 +9,7 @@ const Chatbot = () => {
   const [models, setModels] = useState<any>([]);
   const [currentModel, setCurrentModel] = useState(models[0]);
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
 
   const openai = new OpenAIApi(configuration);
@@ -42,6 +42,7 @@ const Chatbot = () => {
       prompt: text,
       model: currentModel ? currentModel : "text-davinci-003",
       temperature: 0.5,
+      max_tokens: 2048,
     });
     const responseText = response.data?.choices[0].text;
     setMessages((prev) => {

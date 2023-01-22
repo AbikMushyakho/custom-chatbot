@@ -9,7 +9,7 @@ const Chatbot = () => {
   const [models, setModels] = useState<any>([]);
   const [currentModel, setCurrentModel] = useState(models[0]);
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
   const openai = new OpenAIApi(configuration);
